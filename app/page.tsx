@@ -1,65 +1,71 @@
-import Image from "next/image";
+"use client";
+
+import ReadinessCheck from "@/components/assessment/ReadinessCheck";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main style={{ 
+      backgroundColor: '#3d5266', 
+      minHeight: '100vh', 
+      color: 'white',
+      fontFamily: 'sans-serif'
+    }}>
+      {/* 1. HERO SEKCE - vizuální úvod */}
+      <section style={{ 
+        padding: '6rem 2rem 4rem 2rem', 
+        textAlign: 'center',
+        maxWidth: '1000px',
+        margin: '0 auto'
+      }}>
+        <div style={{ 
+          display: 'inline-block', 
+          backgroundColor: 'rgba(245, 124, 21, 0.15)', 
+          color: '#f57c15', 
+          padding: '4px 12px', 
+          borderRadius: '20px',
+          fontSize: '0.8rem',
+          fontWeight: 'bold',
+          letterSpacing: '1px',
+          marginBottom: '1.5rem',
+          border: '1px solid #f57c15'
+        }}>
+          PSYCHOFYZICKÉ TRÉNOVÁNÍ REAKCÍ
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        
+        <h1 style={{ 
+          fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', 
+          fontWeight: 900, 
+          lineHeight: 1.1, 
+          marginBottom: '1.5rem' 
+        }}>
+          Dělejte správná <br />
+          <span style={{ color: '#f57c15' }}>rozhodnutí</span> <br />
+          i pod tlakem
+        </h1>
+        
+        <p style={{ 
+          fontSize: '1.25rem', 
+          maxWidth: '600px', 
+          margin: '0 auto 3rem auto', 
+          opacity: 0.9,
+          lineHeight: 1.6
+        }}>
+          Zjistěte svou úroveň psychofyzické odolnosti v kritických situacích. 
+          Tam, kde ostatní chybují, vy zachováte klid.
+        </p>
+      </section>
+
+      {/* 2. DIAGNOSTICKÝ MODUL - ten box co už máš */}
+      <section style={{ paddingBottom: '8rem', paddingLeft: '1rem', paddingRight: '1rem' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <ReadinessCheck />
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* 3. FOOTER (volitelné) */}
+      <footer style={{ textAlign: 'center', paddingBottom: '2rem', opacity: 0.5, fontSize: '0.8rem' }}>
+        © 2026 RESILIUM. Všechna práva vyhrazena.
+      </footer>
+    </main>
   );
 }
