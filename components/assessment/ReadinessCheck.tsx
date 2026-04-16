@@ -62,7 +62,7 @@ export default function ReadinessCheck() {
             <button
               key={index}
               onClick={() => {
-                addAnswer(currentQuestion.id, option.value);
+                addAnswer(currentQuestion.id, option.score);
                 if (currentQuestionIndex < questions.length - 1) {
                   nextQuestion();
                 } else {
