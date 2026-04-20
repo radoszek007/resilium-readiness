@@ -1,36 +1,36 @@
 export interface ResiliumProfile {
   title: string;
   description: string;
-  risks: string[];
-  recommendation: string;
-  detailedAnalysis: string;
+  impact: string;
+  nextStep: string;
+  program: string;
 }
 
 export const calculateResults = (totalScore: number): ResiliumProfile => {
-  // Škála pro 10 otázek (Max 40 bodů)
-  if (totalScore >= 34) {
+  // Škála pro 8 otázek (Max 32 bodů)
+  if (totalScore >= 26) {
     return {
-      title: "Resilium Ready (Vzorová stabilita)",
-      description: "Vykazujete mimořádnou kognitivní kontrolu. V kritických momentech nedochází k zahlcení pracovní paměti, což vám umožňuje provádět komplexní rozhodnutí pod palbou stresorů.",
-      detailedAnalysis: "Vaše neurofyziologická odezva je charakteristická vysokou variabilitou srdečního tepu (HRV) a rychlou aktivací prefrontálního kortexu, který tlumí instinktivní panické reakce. V praxi to znamená, že vteřinová pauza mezi podnětem a reakcí je u vás dostatečně široká pro volbu optimálního řešení, nikoliv pouze reaktivního přežití.",
-      risks: ["Kognitivní tunelování u známých úkolů", "Tendence k izolovanému rozhodování", "Vysoké nároky na kognitivní kapacitu podřízených"],
-      recommendation: "Udržujte status quo pomocí pokročilých simulací s prvky 'překvapení'. Zaměřte se na delegování v krizi, aby vaše kognitivní kapacita nebyla vyčerpána mikro-managementem."
+      title: "Stabilní pod tlakem",
+      description: "Dokážete udržet nadhled i ve chvíli, kdy ostatní ztrácejí orientaci. Vaše schopnost odložit první impulz a vnímat souvislosti je pro tým vzácná stabilizační síla. Snižujete pravděpodobnost zbytečné eskalace a komunikačních chyb.",
+      impact: "V konfliktní situaci fungujete jako přirozená kotva. Vaše stabilita brání šíření nervozity a udržuje efektivitu okolí.",
+      nextStep: "I špičkový systém potřebuje údržbu. Zaměřte se na techniky mikrodoplnění energie, abyste předešli kognitivnímu vyhoření.",
+      program: "Vhodný program: Resilium Advance nebo Pro"
     };
-  } else if (totalScore >= 24) {
+  } else if (totalScore >= 18) {
     return {
-      title: "Stabilní profesionál",
-      description: "Pod tlakem fungujete spolehlivě, ale proces vnitřní stabilizace vás stojí značné množství metabolické energie.",
-      detailedAnalysis: "Detekujeme funkční stabilitu s mírnou tendencí k reaktivitě při kumulaci více stresorů najednou. Vaše tělo vykazuje známky zvýšeného kortizolu, což při dlouhodobé expozici vede k tunelovému vidění. Dokážete situaci vyřešit, ale cena za tento výkon je vysoká míra post-incidentní únavy.",
-      risks: ["Ztráta jemné motoriky při únavě", "Sklon k agresivní komunikaci pod tlakem", "Riziko rozhodovací paralýzy u neznámých scénářů"],
-      recommendation: "Implementujte 'Tactical Breath' protokol ihned po detekci prvního stresoru. Cílem je udržet srdeční tep v zóně, kde zůstává zachována jemná motorika a komplexní myšlení (pod 145 BPM)."
+      title: "Výkonný, ale reaktivní",
+      description: "Pod tlakem situace zvládáte, ale za cenu vysokého vnitřního napětí. Vaše reaktivita se nenápadně přenáší na okolí, což může u týmu vyvolávat váhavost nebo strach z chyby.",
+      impact: "Pravděpodobně neztrácíte motivaci, ale spíše klid a schopnost efektivní prioritizace. Tým od vás přebírá nervozitu, což zvyšuje riziko chyb.",
+      nextStep: "Potřebujete zkrátit dobu návratu do klidového stavu. Vaším cílem je trénink první reakce pro snížení metabolické daně za váš výkon.",
+      program: "Vhodný program: Resilium Start"
     };
   } else {
     return {
-      title: "Reaktivní status (Vysoké riziko)",
-      description: "Vaše reakce jsou řízeny limbickým systémem. V kritickém momentě dochází k odpojení exekutivních funkcí mozku ve prospěch instinktů.",
-      detailedAnalysis: "Analýza ukazuje na nízký práh pro 'amygdala hijack'. Jakmile zátěž překročí určitou mez, váš mozek přepne do režimu přežití (boj/útěk/strnutí). V tomto stavu nejste schopni vnímat širší kontext a vaše rozhodnutí jsou chaotická, což v operačním prostředí představuje vysoké bezpečnostní riziko.",
-      risks: ["Úplná ztráta situačního povědomí", "Fyzické zamrznutí (Freeze)", "Ohrožení integrity týmu"],
-      recommendation: "Nezbytný základní trénink v kontrolovaném prostředí. Musíte vybudovat 'neokortexové kotvy' – jednoduché, zautomatizované postupy, které provedete dříve, než vás stres zcela zahltí. Doporučujeme kurz Resilium Základy."
+      title: "Přetížená reakce",
+      description: "Pod tlakem se vám zhoršuje přístup k vlastním schopnostem právě ve chvíli, kdy je nejvíc potřebujete. Stres u vás dominuje nad záměrem, což vede k nechtěné impulzivitě nebo paralýze.",
+      impact: "Tohle není otázka charakteru, ale chybějícího tréninku stability. V krizové situaci pravděpodobně neřešíte primární úkol, ale bojujete s vlastní fyziologií.",
+      nextStep: "Prvním krokem je stabilizace první reakce pomocí Protokolu 10 sekund. Bez tohoto základu nemá smysl řešit vyšší patra výkonu.",
+      program: "Vhodný program: Resilium Start"
     };
   }
 };

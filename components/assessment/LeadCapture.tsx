@@ -4,62 +4,73 @@ import React, { useState } from 'react';
 import { useReadinessStore } from '@/store/useReadinessStore';
 
 export function LeadCapture() {
-  const { setUserData, setStep } = useReadinessStore();
+  const { userData, setUserData, setStep, answers } = useReadinessStore();
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', company: '' });
+
+  const totalScore = answers.reduce((sum, a) => sum + (Number(a.score) || 0), 0);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      // 1. Simulace odeslání na API (později napojíme na ostrou DB)
-      // await fetch('/api/lead', { method: 'POST', body: JSON.stringify(formData) });
+      // SEM VLOŽ SVŮJ FORMSPREE ODKAZ
+      const FORMSPREE_URL = "https://formspree.io/f/maqabdgg"
 
-      // 2. Uložení dat do storu pro potřeby PDF reportu
-      setUserData(formData);
-
-      // 3. Přepnutí na výsledky
+      await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          jmeno: userData.name,
+          email: userData.email,
+          firma: userData.company,
+          skore: totalScore,
+        }),
+      });
       setStep('results');
     } catch (error) {
-      console.error("Chyba:", error);
+      setStep('results');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="bg-[#2d3e4f] p-8 rounded-xl shadow-2xl border border-white/10 max-w-md mx-auto">
-      <h2 className="text-2xl font-bold text-white mb-2 text-center">Analýza je připravena</h2>
-      <p className="text-gray-300 text-center mb-8 text-sm">
-        Zadejte údaje pro vygenerování vašeho osobního PDF auditu.
+    <div className="max-w-md mx-auto bg-[#2d3e4f] p-10 rounded-3xl shadow-2xl text-white border border-white/10">
+      <h2 className="text-3xl font-bold mb-4 text-[#f57c15]">Audit dokončen</h2>
+      <p className="mb-8 opacity-70 text-sm leading-relaxed">
+        Zadejte své údaje pro vygenerování kompletního PDF auditu a strategického doporučení.
       </p>
-
-      <form onSubmit={handleSubmit} className="space-y-4">
+      
+      <form onSubmit={handleSubmit} className="space-y-5">
         <input
           required
-          placeholder="Vaše jméno"
-          className="w-full p-3 rounded bg-[#3d5266] border border-white/10 text-white outline-none focus:border-[#f57c15]"
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          placeholder="Jméno a příjmení"
+          className="w-full p-4 rounded-xl bg-[#3d5266] border border-white/10 outline-none focus:border-[#f57c15]"
+          value={userData.name}
+          onChange={(e) => setUserData({ ...userData, name: e.target.value })}
         />
         <input
           required
           type="email"
-          placeholder="E-mail (pracovní)"
-          className="w-full p-3 rounded bg-[#3d5266] border border-white/10 text-white outline-none focus:border-[#f57c15]"
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          placeholder="Pracovní e-mail"
+          className="w-full p-4 rounded-xl bg-[#3d5266] border border-white/10 outline-none focus:border-[#f57c15]"
+          value={userData.email}
+          onChange={(e) => setUserData({ ...userData, email: e.target.value })}
         />
         <input
-          placeholder="Firma / Instituce"
-          className="w-full p-3 rounded bg-[#3d5266] border border-white/10 text-white outline-none focus:border-[#f57c15]"
-          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+          placeholder="Firma"
+          className="w-full p-4 rounded-xl bg-[#3d5266] border border-white/10 outline-none focus:border-[#f57c15]"
+          value={userData.company}
+          onChange={(e) => setUserData({ ...userData, company: e.target.value })}
         />
         
         <button
+          type="submit"
           disabled={loading}
-          className="w-full py-4 bg-[#f57c15] text-white font-bold rounded-lg hover:bg-[#e66a00] transition-colors shadow-lg uppercase tracking-wider"
+          className="w-full py-4 bg-[#f57c15] text-white font-bold rounded-xl hover:bg-[#e66a00] transition-all shadow-lg uppercase tracking-widest text-sm"
         >
-          {loading ? 'Zpracovávám...' : 'Získat audit v PDF'}
+          {loading ? "Odesílám..." : "Zobrazit analýzu"}
         </button>
       </form>
     </div>

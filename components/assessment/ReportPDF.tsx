@@ -1,80 +1,88 @@
 "use client";
-import React from 'react';
-import { Page, Text, View, Document, StyleSheet, Font } from '@react-pdf/renderer';
 
-Font.register({
-  family: 'Roboto',
-  src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-light-webfont.ttf',
-});
-Font.register({
-  family: 'RobotoBold',
-  src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-bold-webfont.ttf',
-});
+import React, { useState, useEffect, useMemo } from 'react';
+import { useReadinessStore } from '@/store/useReadinessStore';
+import { calculateResults } from '@/lib/calculateResults';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import { ReportPDF } from './ReportPDF';
 
-const styles = StyleSheet.create({
-  page: { padding: 60, backgroundColor: '#FFFFFF', fontFamily: 'Roboto', fontSize: 10, lineHeight: 1.6 },
-  header: { borderBottomWidth: 1, borderBottomColor: '#3d5266', paddingBottom: 15, marginBottom: 25, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  logo: { fontSize: 20, fontFamily: 'RobotoBold', color: '#3d5266', letterSpacing: 1 },
-  confidential: { fontSize: 8, color: '#f57c15', fontFamily: 'RobotoBold', textTransform: 'uppercase' },
-  meta: { marginBottom: 40, color: '#666', fontSize: 9, backgroundColor: '#f9f9f9', padding: 15, borderRadius: 3 },
-  title: { fontSize: 26, fontFamily: 'RobotoBold', color: '#3d5266', marginBottom: 15 },
-  subTitle: { fontSize: 11, fontFamily: 'RobotoBold', color: '#f57c15', marginBottom: 20, textTransform: 'uppercase', letterSpacing: 1 },
-  section: { marginBottom: 25 },
-  sectionHeading: { fontFamily: 'RobotoBold', color: '#3d5266', borderBottomWidth: 1, borderBottomColor: '#EEE', marginBottom: 10, paddingBottom: 5, textTransform: 'uppercase', fontSize: 10 },
-  analysisBox: { padding: 20, backgroundColor: '#f4f7f9', marginVertical: 15, borderLeftWidth: 4, borderLeftColor: '#f57c15' },
-  bodyText: { marginBottom: 12, textAlign: 'justify', color: '#1a1a1a' },
-  bulletItem: { marginLeft: 15, marginBottom: 6, color: '#333' },
-  strategy: { marginTop: 30, padding: 25, backgroundColor: '#3d5266', color: '#FFF', borderRadius: 4 },
-  strategyTitle: { fontFamily: 'RobotoBold', fontSize: 13, marginBottom: 10, color: '#f57c15' },
-  footer: { position: 'absolute', bottom: 40, left: 60, right: 60, textAlign: 'center', color: '#AAA', fontSize: 7, borderTopWidth: 1, borderTopColor: '#EEE', paddingTop: 10, fontFamily: 'Roboto' }
-});
+export function ResultsReport() {
+  const { answers, userData } = useReadinessStore();
+  const [isClient, setIsClient] = useState(false);
 
-export function ReportPDF({ profile, userName, company }: any) {
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const totalScore = useMemo(() => {
+    if (!answers) return 0;
+    return answers.reduce((sum, a) => sum + (Number(a.score) || 0), 0);
+  }, [answers]);
+
+  const result = calculateResults(totalScore);
+
+  const handleConsultation = () => {
+    const subject = encodeURIComponent(`Resilium Audit: Poptávka konzultace (${userData.name})`);
+    const body = encodeURIComponent(`Dobrý den,\n\nmám zájem o konzultaci výsledků auditu.\nSkóre: ${totalScore}/32\nProfil: ${result.title}\n\nJméno: ${userData.name}\nFirma: ${userData.company}`);
+    window.location.href = `mailto:info@resilium.cz?subject=${subject}&body=${body}`;
+  };
+
+  if (!isClient) return null;
+
   return (
-    <Document title={`Resilium_Audit_${userName}`}>
-      <Page size="A4" style={styles.page}>
-        <View style={styles.header}>
-          <Text style={styles.logo}>RESILIUM®</Text>
-          <Text style={styles.confidential}>Operační Readiness Audit</Text>
-        </View>
+    <div className="max-w-4xl mx-auto space-y-8 p-4 pb-20 animate-in fade-in duration-700">
+      <div className="bg-[#2d3e4f] rounded-2xl p-8 border-l-8 border-[#f57c15] shadow-2xl text-white">
+        <div className="flex justify-between items-start mb-8">
+          <div>
+            <span className="text-[#f57c15] font-bold text-xs uppercase tracking-[0.2em]">Váš diagnostický profil</span>
+            <h2 className="text-4xl font-bold mt-2">{result.title}</h2>
+          </div>
+          <div className="bg-black/20 p-4 rounded-xl text-center">
+            <span className="block text-3xl font-bold text-[#f57c15]">{totalScore}</span>
+            <span className="text-[10px] opacity-50 uppercase font-bold">Body / 32</span>
+          </div>
+        </div>
+        
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="space-y-4">
+            <h3 className="text-[#f57c15] font-bold text-sm uppercase">Analýza stavu</h3>
+            <p className="opacity-90 leading-relaxed">{result.description}</p>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-[#f57c15] font-bold text-sm uppercase">Dopad v praxi</h3>
+            <p className="opacity-90 leading-relaxed">{result.impact}</p>
+          </div>
+        </div>
+      </div>
 
-        <View style={styles.meta}>
-          <Text>SUBJEKT: {userName}</Text>
-          <Text>ORGANIZACE: {company || 'Nespecifikováno'}</Text>
-          <Text>ID PROTOKOLU: RES-{Math.floor(Math.random()*1000000)}</Text>
-          <Text>DATUM: {new Date().toLocaleDateString('cs-CZ')}</Text>
-        </View>
+      <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+        <h3 className="text-[#3d5266] font-bold text-xl mb-4 uppercase tracking-tight">Další doporučený krok</h3>
+        <p className="text-gray-600 mb-6">{result.nextStep}</p>
+        <div className="inline-block px-4 py-2 bg-gray-100 rounded-lg text-[#3d5266] font-bold text-sm mb-8">
+          {result.program}
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-4">
+          <PDFDownloadLink 
+            document={<ReportPDF profile={result} userName={userData.name} company={userData.company} score={totalScore} />} 
+            fileName={`Resilium_Audit_${userData.name.replace(/\s/g, '_')}.pdf`}
+            className="w-full"
+          >
+            {({ loading }) => (
+              <button className="w-full py-4 bg-[#3d5266] text-white font-bold rounded-xl hover:bg-black transition-all uppercase text-sm tracking-widest">
+                {loading ? "Připravuji PDF..." : "Stáhnout kompletní audit"}
+              </button>
+            )}
+          </PDFDownloadLink>
 
-        <View style={styles.section}>
-          <Text style={styles.subTitle}>KLASIFIKACE STAVU:</Text>
-          <Text style={styles.title}>{profile.title}</Text>
-          <Text style={styles.bodyText}>{profile.description}</Text>
-        </View>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionHeading}>Hloubková neurofyziologická analýza</Text>
-          <View style={styles.analysisBox}>
-            <Text style={styles.bodyText}>{profile.detailedAnalysis}</Text>
-          </View>
-        </View>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionHeading}>Identifikované faktory degradace stability</Text>
-          {profile.risks.map((risk: string, i: number) => (
-            <Text key={i} style={styles.bulletItem}>• {risk}</Text>
-          ))}
-        </View>
-
-        <View style={styles.strategy}>
-          <Text style={styles.strategyTitle}>STRATEGICKÁ DOPORUČENÍ RESILIUM</Text>
-          <Text style={{ fontSize: 11, lineHeight: 1.6 }}>{profile.recommendation}</Text>
-        </View>
-
-        <Text style={styles.footer}>
-          Tento dokument je duševním vlastnictvím společnosti Resilium.cz. Určeno pro interní rozvoj. 
-          Všechny analýzy vycházejí z metodiky neuro-kognitivního zátěžového testování.
-        </Text>
-      </Page>
-    </Document>
+          <button 
+            onClick={handleConsultation}
+            className="w-full py-4 bg-[#f57c15] text-white font-bold rounded-xl hover:bg-[#e66a00] transition-all uppercase text-sm tracking-widest"
+          >
+            Poptat konzultaci
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
