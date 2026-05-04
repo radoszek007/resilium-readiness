@@ -1,15 +1,57 @@
 "use client";
 
-import ReadinessCheck from "@/components/assessment/ReadinessCheck";
+import { useEffect, useState } from "react";
+import ReadinessCheck, { LanguageSwitcher } from "@/components/assessment/ReadinessCheck";
+import { useReadinessStore } from "@/store/useReadinessStore";
 
 export default function Home() {
+  const { language, setLanguage } = useReadinessStore();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    // Přečtení parametru z URL při načtení stránky
+    const params = new URLSearchParams(window.location.search);
+    const langParam = params.get("lang");
+    if (langParam === "cs" || langParam === "pl") {
+      setLanguage(langParam);
+    }
+    setIsClient(true);
+  }, [setLanguage]);
+
+  const t = {
+    cs: {
+      tag: "PSYCHOFYZICKÉ TRÉNOVÁNÍ REAKCÍ",
+      title1: "Dělejte správná",
+      titleHighlight: "rozhodnutí",
+      title2: "i pod tlakem",
+      desc: "Zjistěte svou úroveň psychofyzické odolnosti v kritických situacích. Tam, kde ostatní chybují, vy zachováte klid.",
+      footer: "© 2026 RESILIUM. Všechna práva vyhrazena.",
+    },
+    pl: {
+      tag: "PSYCHOFIZYCZNY TRENING REAKCJI",
+      title1: "Podejmuj właściwe",
+      titleHighlight: "decyzje",
+      title2: "nawet pod presją",
+      desc: "Sprawdź swój poziom odporności psychofizycznej w sytuacjach krytycznych. Tam, gdzie inni popełniają błędy, Ty zachowasz spokój.",
+      footer: "© 2026 RESILIUM. Wszelkie prawa zastrzeżone.",
+    }
+  }[language];
+
+  // Zabrání zobrazení špatného jazyka (než se přečte URL)
+  if (!isClient) {
+    return <main style={{ backgroundColor: '#3d5266', minHeight: '100vh' }} />;
+  }
+
   return (
     <main style={{ 
       backgroundColor: '#3d5266', 
       minHeight: '100vh', 
       color: 'white',
-      fontFamily: 'sans-serif'
+      fontFamily: 'sans-serif',
+      position: 'relative'
     }}>
+      <LanguageSwitcher />
+
       {/* 1. HERO SEKCE - vizuální úvod */}
       <section style={{ 
         padding: '6rem 2rem 4rem 2rem', 
@@ -29,7 +71,7 @@ export default function Home() {
           marginBottom: '1.5rem',
           border: '1px solid #f57c15'
         }}>
-          PSYCHOFYZICKÉ TRÉNOVÁNÍ REAKCÍ
+          {t.tag}
         </div>
         
         <h1 style={{ 
@@ -38,9 +80,9 @@ export default function Home() {
           lineHeight: 1.1, 
           marginBottom: '1.5rem' 
         }}>
-          Dělejte správná <br />
-          <span style={{ color: '#f57c15' }}>rozhodnutí</span> <br />
-          i pod tlakem
+          {t.title1} <br />
+          <span style={{ color: '#f57c15' }}>{t.titleHighlight}</span> <br />
+          {t.title2}
         </h1>
         
         <p style={{ 
@@ -50,8 +92,7 @@ export default function Home() {
           opacity: 0.9,
           lineHeight: 1.6
         }}>
-          Zjistěte svou úroveň psychofyzické odolnosti v kritických situacích. 
-          Tam, kde ostatní chybují, vy zachováte klid.
+          {t.desc}
         </p>
       </section>
 
@@ -64,7 +105,7 @@ export default function Home() {
 
       {/* 3. FOOTER (volitelné) */}
       <footer style={{ textAlign: 'center', paddingBottom: '2rem', opacity: 0.5, fontSize: '0.8rem' }}>
-        © 2026 RESILIUM. Všechna práva vyhrazena.
+        {t.footer}
       </footer>
     </main>
   );

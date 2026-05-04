@@ -18,12 +18,14 @@ interface UserData {
 
 // Definice celého stavu (Store)
 interface ReadinessState {
+  language: "cs" | "pl";
   step: Step;
   currentQuestionIndex: number;
   answers: Answer[];
   userData: UserData;
   
   // AKCE (Funkce pro změnu stavu)
+  setLanguage: (lang: "cs" | "pl") => void;
   setStep: (step: Step) => void;
   addAnswer: (questionId: number, score: number) => void;
   nextQuestion: () => void;
@@ -33,10 +35,14 @@ interface ReadinessState {
 
 export const useReadinessStore = create<ReadinessState>((set) => ({
   // Výchozí hodnoty
+  language: "cs",
   step: 'intro',
   currentQuestionIndex: 0,
   answers: [],
   userData: { name: '', email: '', company: '' },
+
+  // Změna jazyka
+  setLanguage: (language) => set({ language }),
 
   // Změna fáze (např. z otázek na formulář)
   setStep: (step) => set({ step }),
