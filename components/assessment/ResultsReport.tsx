@@ -48,6 +48,19 @@ export function ResultsReport() {
       footerCopy: "© 2026 Resilium – Profesjonalna diagnostyka stabilności pod presją.",
       mailSubject: `Audyt Resilium: Prośba o konsultację (${userData.name})`,
       mailBody: `Dzień dobry,\n\njestem zainteresowany/a konsultacją wyników mojego Audytu Resilium.\n\nPODSUMOWANIE WYNIKÓW:\nImię: ${userData.name}\nFirma: ${userData.company || 'Nie podano'}\nUzyskany wynik: ${totalScore} / 32\nProfil diagnostyczny: ${result.title}\n\nProszę o propozycję terminu krótkiej rozmowy w celu omówienia dalszych kroków.`,
+    },
+    en: {
+      profileLabel: "Your diagnostic profile",
+      pointsLabel: "Points / 32",
+      analysisLabel: "Status Analysis",
+      impactLabel: "Impact in Practice",
+      recommendationLabel: "Strategic Recommendation",
+      pdfGenLabel: "Generating audit...",
+      pdfDownloadLabel: "Download full PDF audit",
+      consultationBtn: "Request results consultation",
+      footerCopy: "© 2026 Resilium – Professional diagnosis of stability under pressure.",
+      mailSubject: `Resilium Audit: Consultation request (${userData.name})`,
+      mailBody: `Hello,\n\nI am interested in a consultation regarding the results of my Resilium Audit.\n\nRESULTS SUMMARY:\nName: ${userData.name}\nCompany: ${userData.company || 'Not provided'}\nScore achieved: ${totalScore} / 32\nDiagnostic profile: ${result.title}\n\nPlease suggest a time for a short call to discuss the next steps.`,
     }
   }[language];
 

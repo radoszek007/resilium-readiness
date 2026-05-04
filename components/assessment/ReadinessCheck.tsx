@@ -30,6 +30,12 @@ export default function ReadinessCheck() {
       introDesc: "Dowiedz się, jak reagujesz pod dużą presją operacyjną.",
       introBtn: "ROZPOCZNIJ TEST",
       auditPoint: "Punkt audytu",
+    },
+    en: {
+      introTitle: "Ready for the diagnosis?",
+      introDesc: "Find out how you react under high operational pressure.",
+      introBtn: "START TEST",
+      auditPoint: "Audit point",
     }
   }[language];
 
@@ -129,6 +135,9 @@ export function LanguageSwitcher() {
       </button>
       <button onClick={() => setLanguage('pl')} className={`px-3 py-1 flex items-center gap-1.5 rounded text-xs font-bold transition-all ${language === 'pl' ? 'bg-[#f57c15] text-white shadow' : 'text-gray-400 hover:text-white'}`}>
         <span className="text-sm leading-none">🇵🇱</span> PL
+      </button>
+      <button onClick={() => setLanguage('en')} className={`px-3 py-1 flex items-center gap-1.5 rounded text-xs font-bold transition-all ${language === 'en' ? 'bg-[#f57c15] text-white shadow' : 'text-gray-400 hover:text-white'}`}>
+        <span className="text-sm leading-none">🇬🇧</span> EN
       </button>
     </div>
   );

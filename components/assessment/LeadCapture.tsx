@@ -25,6 +25,15 @@ export function LeadCapture() {
       company: "Firma",
       btnGenerating: "Wysyłanie...",
       btnSubmit: "Pokaż analizę",
+    },
+    en: {
+      title: "Audit completed",
+      desc: "Enter your details to generate the full PDF audit and strategic recommendation.",
+      name: "Full name",
+      email: "Work email",
+      company: "Company",
+      btnGenerating: "Sending...",
+      btnSubmit: "Show analysis",
     }
   }[language];
 

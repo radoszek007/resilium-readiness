@@ -12,8 +12,8 @@ export default function Home() {
     // Přečtení parametru z URL při načtení stránky
     const params = new URLSearchParams(window.location.search);
     const langParam = params.get("lang");
-    if (langParam === "cs" || langParam === "pl") {
-      setLanguage(langParam);
+    if (langParam === "cs" || langParam === "pl" || langParam === "en") {
+      setLanguage(langParam as "cs" | "pl" | "en");
     }
     setIsClient(true);
   }, [setLanguage]);
@@ -34,6 +34,14 @@ export default function Home() {
       title2: "nawet pod presją",
       desc: "Sprawdź swój poziom odporności psychofizycznej w sytuacjach krytycznych. Tam, gdzie inni popełniają błędy, Ty zachowasz spokój.",
       footer: "© 2026 RESILIUM. Wszelkie prawa zastrzeżone.",
+    },
+    en: {
+      tag: "PSYCHOPHYSICAL REACTION TRAINING",
+      title1: "Make the right",
+      titleHighlight: "decisions",
+      title2: "even under pressure",
+      desc: "Discover your psychophysical resilience level in critical situations. Where others fail, you stay calm.",
+      footer: "© 2026 RESILIUM. All rights reserved.",
     }
   }[language];
 

@@ -9,13 +9,13 @@ export interface ReadinessResult {
   percentage: number;
 }
 
-export function calculateResults(score: number, lang: "cs" | "pl" = "cs"): ReadinessResult {
+export function calculateResults(score: number, lang: "cs" | "pl" | "en" = "cs"): ReadinessResult {
   const maxScore = 32;
   const percentage = Math.round((score / maxScore) * 100);
 
   if (score >= 27) {
-    return lang === "cs"
-      ? {
+    if (lang === "cs") {
+      return {
           title: "Funkční reakce pod tlakem",
           description:
             "Vaše odpovědi ukazují dobrou schopnost obnovit jasné uvažování, udržet orientaci a rozhodovat i při zvýšené zátěži.",
@@ -27,8 +27,9 @@ export function calculateResults(score: number, lang: "cs" | "pl" = "cs"): Readi
           zone: "green",
           zoneLabel: "Zelená zóna",
           percentage,
-        }
-      : {
+      };
+    } else if (lang === "pl") {
+      return {
           title: "Funkcjonalna reakcja pod presją",
           description:
             "Twoje odpowiedzi wskazują na dobrą zdolność do odzyskiwania jasności myślenia, utrzymywania orientacji i podejmowania decyzji nawet przy zwiększonym obciążeniu.",
@@ -40,12 +41,27 @@ export function calculateResults(score: number, lang: "cs" | "pl" = "cs"): Readi
           zone: "green",
           zoneLabel: "Zielona strefa",
           percentage,
-        };
+      };
+    } else {
+      return {
+          title: "Functional Reaction Under Pressure",
+          description:
+            "Your answers show a good ability to restore clear thinking, maintain orientation, and make decisions even under increased load.",
+          impact:
+            "In practice, you can likely hold your course even when others lose their calm. The risk at this level is often false confidence: at higher pressure intensity, time constraints, or team responsibility, weak spots may appear that normal operations don't reveal.",
+          nextStep:
+            "We recommend verifying your reactions in scenario-based training. The goal isn't to start from scratch, but to solidify decision-making, communication, and reactions in more complex situations.",
+          program: "Recommended program: Resilium Advanced",
+          zone: "green",
+          zoneLabel: "Green zone",
+          percentage,
+      };
+    }
   }
 
   if (score >= 19) {
-    return lang === "cs"
-      ? {
+    if (lang === "cs") {
+      return {
           title: "Nestabilní výkon v zátěži",
           description:
             "Vaše odpovědi ukazují, že v běžných podmínkách pravděpodobně fungujete dobře, ale při vyšším tlaku může docházet ke zúžení pozornosti, zpomalení rozhodování nebo přenosu stresu do komunikace.",
@@ -57,8 +73,9 @@ export function calculateResults(score: number, lang: "cs" | "pl" = "cs"): Readi
           zone: "yellow",
           zoneLabel: "Žlutá zóna",
           percentage,
-        }
-      : {
+      };
+    } else if (lang === "pl") {
+      return {
           title: "Niestabilna wydajność pod obciążeniem",
           description:
             "Twoje odpowiedzi wskazują, że w normalnych warunkach prawdopodobnie funkcjonujesz dobrze, ale przy większej presji może dojść do zawężenia uwagi, spowolnienia podejmowania decyzji lub przenoszenia stresu na komunikację.",
@@ -70,11 +87,26 @@ export function calculateResults(score: number, lang: "cs" | "pl" = "cs"): Readi
           zone: "yellow",
           zoneLabel: "Żółta strefa",
           percentage,
-        };
+      };
+    } else {
+      return {
+          title: "Unstable Performance Under Load",
+          description:
+            "Your answers show that you likely function well under normal conditions, but under higher pressure, you may experience narrowed attention, slowed decision-making, or transfer of stress to communication.",
+          impact:
+            "This is the most common profile. You know what you should do, but in the heat of the moment, the quality of your reaction changes. Performance starts to fluctuate: sometimes you decide well, other times you switch to improvisation, shortcuts, or trying to solve everything with willpower.",
+          nextStep:
+            "We recommend basic training in stabilization, orientation, and decision-making under pressure. The goal is to create a simple, usable protocol that can be triggered even when stress rises.",
+          program: "Recommended program: Resilium Start",
+          zone: "yellow",
+          zoneLabel: "Yellow zone",
+          percentage,
+      };
+    }
   }
 
-  return lang === "cs"
-    ? {
+  if (lang === "cs") {
+    return {
         title: "Riziko ztráty rozhodovací kapacity pod tlakem",
         description:
           "Vaše odpovědi ukazují zvýšené riziko zahlcení, impulzivní reakce nebo rozhodovacího zablokování ve chvíli, kdy situace vyžaduje klidný a funkční postup.",
@@ -86,8 +118,9 @@ export function calculateResults(score: number, lang: "cs" | "pl" = "cs"): Readi
         zone: "red",
         zoneLabel: "Červená zóna",
         percentage,
-      }
-    : {
+    };
+  } else if (lang === "pl") {
+    return {
         title: "Ryzyko utraty zdolności decyzyjnych pod presją",
         description:
           "Twoje odpowiedzi wskazują na podwyższone ryzyko przytłoczenia, impulsywnych reakcji lub blokady decyzyjnej w momencie, gdy sytuacja wymaga spokojnego i funkcjonalnego podejścia.",
@@ -99,9 +132,24 @@ export function calculateResults(score: number, lang: "cs" | "pl" = "cs"): Readi
         zone: "red",
         zoneLabel: "Czerwona strefa",
         percentage,
-      };
+    };
+  } else {
+    return {
+        title: "Risk of Losing Decision Capacity Under Pressure",
+        description:
+          "Your answers show an increased risk of being overwhelmed, impulsive reactions, or decision-making blocks when the situation requires a calm and functional approach.",
+        impact:
+          "In practice, this can mean losing access to your normal abilities under pressure. It's not necessarily a lack of knowledge. The problem is that under high load, the body, attention, and decision-making can go in different directions.",
+        nextStep:
+          "We recommend a targeted consultation and a training proposal focused on first reaction, stability, decision-making, and communication under load. At this level, more information isn't enough. Practical reaction training is required.",
+        program: "Recommended program: Resilium Pro",
+        zone: "red",
+        zoneLabel: "Red zone",
+        percentage,
+    };
+  }
 }
 
-export function getReadinessLevel(score: number, lang: "cs" | "pl" = "cs"): ReadinessResult {
+export function getReadinessLevel(score: number, lang: "cs" | "pl" | "en" = "cs"): ReadinessResult {
   return calculateResults(score, lang);
 }

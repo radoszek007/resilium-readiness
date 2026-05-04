@@ -192,6 +192,37 @@ const pdfTranslations = {
     disclaimerTitle: "Uwaga końcowa:",
     disclaimer: "Wyniki tego audytu opierają się na schemacie samooceny. Nie jest to diagnoza kliniczna, badanie psychologiczne ani gwarantowana prognoza zachowania w sytuacji kryzysowej. Wynik służy jako praktyczna podstawa do podjęcia decyzji, czy warto kontynuować ukierunkowanym treningiem reakcji, komunikacji i podejmowania decyzji pod presją.",
     footerText: "Resilium - Profesjonalny trening stabilności i podejmowania decyzji pod presją. Więcej na www.resilium.cz"
+  },
+  en: {
+    auditTitle: "Readiness to Act Under Pressure Audit",
+    client: "Client",
+    organization: "Organization",
+    individualAudit: "Individual Audit",
+    profile: "1. Diagnostic Profile:",
+    impact: "2. Impact in Practice",
+    impactDesc: "The result shows how you are likely to react when pressure rises, stimuli increase, and decisions must be made without ideal conditions. The Readiness Index is not a medical or psychological examination. It serves as a practical orientation tool for working with reaction, communication, and decision-making under load.",
+    strategy: "3. Strategic Recommendation",
+    confidential: "Confidential - For internal use by the client only.",
+    methodology: "Resilium Readiness Methodology Framework",
+    meth1Title: "Pressure changes the quality of reaction",
+    meth1Desc: "Resilium is based on a simple principle: under load, it is not enough to know what one should do. The deciding factor is whether a person can maintain access to this ability even when their breath, body tension, attention, emotions, and risk perception change.",
+    meth2Title: "The first reaction determines further development",
+    meth2Desc: "The audit primarily monitors the ability to stop the first impulse, restore orientation, and transition to a usable procedure. A short delay between stimulus and reaction is not passivity. It is the space where a higher quality decision is formed.",
+    meth3Title: "Protocol instead of improvisation",
+    meth3Desc: "Without a trained procedure, a person often relies on habit, temperament, or momentary energy. This may suffice in normal operations, but under load, performance becomes unstable. The goal of Resilium is to create simple and repeatable reaction protocols applicable in real situations.",
+    domainsTitle: "Audit Domains",
+    domainsIntro: "Your Readiness Index score of {score}/32 reflects answers in several key areas:",
+    d1: "First reaction:", d1d: "How quickly you return to clear thinking after a sudden disruption.",
+    d2: "Orientation:", d2d: "How well you maintain an overview when pressure rises and stimuli increase.",
+    d3: "Priorities:", d3d: "How you determine the sequence of steps when everything looks urgent.",
+    d4: "Impulse control:", d4d: "How you handle provocation, questioning, or emotional pressure.",
+    d5: "Communication:", d5d: "How your tone, pace, and leadership style affect others under pressure.",
+    d6: "Adaptation:", d6d: "How quickly you resume decision-making when the original plan stops working.",
+    d7: "Ego and feedback:", d7d: "How well you separate your personal position from a functional solution.",
+    d8: "Decision-making:", d8d: "How you act when information is incomplete and waiting increases risk.",
+    disclaimerTitle: "Final notice:",
+    disclaimer: "The results of this audit are based on a self-assessment framework. It is not a clinical diagnosis, psychological examination, or guaranteed prediction of behavior in a crisis situation. The output serves as a practical basis for deciding whether it makes sense to follow up with targeted training of reaction, communication, and decision-making under pressure.",
+    footerText: "Resilium - Professional training for stability and decision-making under pressure. More at www.resilium.cz"
   }
 };
 
@@ -209,7 +240,7 @@ interface ReportPDFProps {
   userName: string;
   company?: string;
   score: number;
-  language?: "cs" | "pl";
+  language?: "cs" | "pl" | "en";
 }
 
 export default function ReportPDF({

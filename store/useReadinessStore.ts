@@ -18,14 +18,14 @@ interface UserData {
 
 // Definice celého stavu (Store)
 interface ReadinessState {
-  language: "cs" | "pl";
+  language: "cs" | "pl" | "en";
   step: Step;
   currentQuestionIndex: number;
   answers: Answer[];
   userData: UserData;
   
   // AKCE (Funkce pro změnu stavu)
-  setLanguage: (lang: "cs" | "pl") => void;
+  setLanguage: (lang: "cs" | "pl" | "en") => void;
   setStep: (step: Step) => void;
   addAnswer: (questionId: number, score: number) => void;
   nextQuestion: () => void;

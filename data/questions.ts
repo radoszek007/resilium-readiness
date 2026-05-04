@@ -1,4 +1,4 @@
-export type Language = "cs" | "pl";
+export type Language = "cs" | "pl" | "en";
 
 export interface Option {
   text: string;
@@ -173,6 +173,88 @@ export const questions: Record<Language, Question[]> = {
         { text: "Decyduję na podstawie priorytetów i dostępnych danych oraz biorę odpowiedzialność za kolejny krok.", score: 4 },
         { text: "Niepewność mnie blokuje i przenoszę decyzję, opóźniam ją lub zostawiam innym.", score: 1 },
         { text: "Wybieram najbezpieczniejszy wariant, który ogranicza największe straty.", score: 3 }
+      ]
+    }
+  ],
+  en: [
+    {
+      id: 1,
+      text: "When the situation suddenly changes and everyone is waiting for your reaction, how quickly do you return to clear thinking?",
+      options: [
+        { text: "For several dozens of seconds, I act more automatically before pulling myself together.", score: 2 },
+        { text: "Within a few seconds. I stop the first impulse, orient myself, and act.", score: 4 },
+        { text: "The situation throws me off completely for a while. I react late, impulsively, or chaotically.", score: 1 },
+        { text: "I feel the pressure for a moment, but usually return quickly to a pragmatic approach.", score: 3 }
+      ]
+    },
+    {
+      id: 2,
+      text: "What happens to your perception when the pressure rises and stimuli increase?",
+      options: [
+        { text: "I hold on to the main problem, but I have to consciously monitor the context.", score: 3 },
+        { text: "I only see the biggest problem in front of me. Context, people, and alternatives disappear.", score: 1 },
+        { text: "I maintain the main goal, people, space, and risks in a single picture.", score: 4 },
+        { text: "I narrow my attention to one thing and start missing the rest.", score: 2 }
+      ]
+    },
+    {
+      id: 3,
+      text: "When multiple demands fall on you at once, do you have a clear way to prioritize your reactions?",
+      options: [
+        { text: "I tend to put out whatever is loudest or most visible.", score: 2 },
+        { text: "I don't have a clear process. The situation overwhelms me and I lose the sequence of steps.", score: 1 },
+        { text: "Yes. I'm guided by the priority of impact, risk, and time.", score: 4 },
+        { text: "Usually yes, but sometimes I switch based on what presses the most.", score: 3 }
+      ]
+    },
+    {
+      id: 4,
+      text: "When someone provokes or questions you in front of others, what determines your response?",
+      options: [
+        { text: "I try to stay objective, even if it affects me internally.", score: 3 },
+        { text: "Emotion takes the wheel and I deal with the impact later.", score: 1 },
+        { text: "The goal of the situation. First I guard the outcome, then the emotion.", score: 4 },
+        { text: "I react faster, sharper, or more personally than is useful.", score: 2 }
+      ]
+    },
+    {
+      id: 5,
+      text: "How does your communication change when the team, client, or colleague starts losing their calm?",
+      options: [
+        { text: "My pressure transfers to others. My tone, pace, or irritation makes the situation worse.", score: 1 },
+        { text: "I refine the message, slow the pace, and keep a pragmatic framework.", score: 4 },
+        { text: "I start shortening communication, skipping details, or taking things upon myself.", score: 2 },
+        { text: "I speak more emphatically, but still try to maintain direction.", score: 3 }
+      ]
+    },
+    {
+      id: 6,
+      text: "A prepared plan fails. How quickly do you restore the ability to decide based on the new reality?",
+      options: [
+        { text: "I need a brief verification of what exactly failed, then I change the procedure.", score: 3 },
+        { text: "I get stuck on the error, explaining it or looking for who is to blame.", score: 1 },
+        { text: "I hold onto the original plan longer than is practical.", score: 2 },
+        { text: "I quickly switch from defending the plan to searching for another viable option.", score: 4 }
+      ]
+    },
+    {
+      id: 7,
+      text: "When a tense situation reveals that someone else has a better proposal than you, what do you do?",
+      options: [
+        { text: "I have a tendency to defend my approach, even if it's losing effectiveness.", score: 2 },
+        { text: "I accept the functional solution regardless of who it came from.", score: 4 },
+        { text: "I take it personally and the conflict over position overrides the solution.", score: 1 },
+        { text: "It hits me internally, but I manage to return to the goal.", score: 3 }
+      ]
+    },
+    {
+      id: 8,
+      text: "When you don't have enough information, but waiting increases risk, how do you react?",
+      options: [
+        { text: "I postpone the decision because I still want certainty.", score: 2 },
+        { text: "I decide based on priorities and available data, and take responsibility for the next step.", score: 4 },
+        { text: "Uncertainty blocks me and I shift, delay, or leave the decision to others.", score: 1 },
+        { text: "I choose the safer option that limits the greatest damage.", score: 3 }
       ]
     }
   ]
