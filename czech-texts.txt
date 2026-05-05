@@ -1,0 +1,147 @@
+=== ÚVODNÍ STRÁNKA (Hero sekce) ===
+Tag: PSYCHOFYZICKÉ TRÉNOVÁNÍ REAKCÍ
+Nadpis 1: Dělejte správná
+Zvýrazněný nadpis: rozhodnutí
+Nadpis 2: i pod tlakem
+Popis: Zjistěte svou úroveň psychofyzické odolnosti v kritických situacích. Tam, kde ostatní chybují, vy zachováte klid.
+Patička: © 2026 RESILIUM. Všechna práva vyhrazena.
+
+=== ÚVOD TESTU (ReadinessCheck) ===
+Nadpis: Připraveni na diagnostiku?
+Popis: Zjistěte, jak reagujete pod vysokým operačním tlakem.
+Tlačítko: ZAČÍT TEST
+Indikátor kroku: Auditní bod
+
+=== OTÁZKY A ODPOVĚDI ===
+Otázka 1: Když se situace náhle změní a všichni čekají na vaši reakci, jak rychle se vracíte k jasnému uvažování?
+- Několik desítek vteřin jednám spíš automaticky, než se znovu srovnám.
+- V řádu několika vteřin. Zastavím první impuls, zorientuji se a jednám.
+- Situace mě na chvíli vyhodí z provozu. Reaguji pozdě, zkratkovitě nebo chaoticky.
+- Chvíli cítím tlak, ale obvykle se rychle vrátím k věcnému postupu.
+
+Otázka 2: Co se stane s vaším vnímáním, když se tlak zvedne a přibývá podnětů?
+- Držím hlavní problém, ale musím si vědomě hlídat okolnosti.
+- Vidím jen největší problém před sebou. Kontext, lidé a alternativy mizí.
+- Udržím hlavní cíl, lidi, prostor i rizika v jednom obrazu.
+- Zúžím pozornost na jednu věc a ostatní mi začíná unikat.
+
+Otázka 3: Když se na vás sesype více požadavků najednou, máte jasný způsob, jak určit pořadí reakcí?
+- Spíš hasím to, co je nejhlasitější nebo nejviditelnější.
+- Nemám jasný postup. Situace mě zahltí a ztrácím pořadí kroků.
+- Ano. Řídím se prioritou dopadu, rizika a času.
+- Většinou ano, ale někdy přepínám podle toho, co nejvíc tlačí.
+
+Otázka 4: Když vás někdo vyprovokuje nebo zpochybní před ostatními, co rozhoduje o vaší odpovědi?
+- Snažím se zůstat věcný, i když se mě to vnitřně dotkne.
+- Emoce převezme řízení a dopad řeším až později.
+- Cíl situace. Nejprve si hlídám výsledek, potom emoci.
+- Reaguji rychleji, ostřeji nebo osobněji, než je užitečné.
+
+Otázka 5: Jak se mění vaše komunikace, když tým, klient nebo kolega začne ztrácet klid?
+- Můj tlak se přenáší na ostatní. Tón, tempo nebo podráždění situaci zhoršují.
+- Zpřesním sdělení, zpomalím tempo a držím věcný rámec.
+- Začnu komunikaci zkracovat, přeskakovat nebo přebírat věci na sebe.
+- Mluvím důrazněji, ale stále se snažím udržet směr.
+
+Otázka 6: Připravený plán selže. Jak rychle obnovíte schopnost rozhodovat podle nové reality?
+- Potřebuji krátké ověření, co přesně selhalo, pak měním postup.
+- Zaseknu se v chybě, vysvětlování nebo hledání viníka.
+- Držím původní plán déle, než je praktické.
+- Rychle přepnu z obhajoby plánu na hledání další použitelné varianty.
+
+Otázka 7: Když se v napjaté situaci ukáže, že někdo jiný má lepší návrh než vy, co uděláte?
+- Mám tendenci svůj postup bránit, i když už ztrácí účinnost.
+- Přijmu funkční řešení bez ohledu na to, od koho přišlo.
+- Beru to osobně a konflikt o pozici začne převažovat nad řešením.
+- Vnitřně mě to zasáhne, ale dokážu se vrátit k cíli.
+
+Otázka 8: Když nemáte dost informací, ale čekání zvyšuje riziko, jak reagujete?
+- Odkládám rozhodnutí, protože chci ještě jistotu.
+- Rozhodnu podle priorit, dostupných dat a přijmu odpovědnost za další krok.
+- Nejistota mě blokuje a rozhodnutí přesouvám, oddaluji nebo nechávám na jiných.
+- Volím bezpečnější variantu, která omezuje největší škodu.
+
+=== FORMULÁŘ SBĚRU KONTAKTŮ (LeadCapture) ===
+Nadpis: Audit dokončen
+Popis: Zadejte své údaje pro vygenerování kompletního PDF auditu a strategického doporučení.
+Placeholder 1: Jméno a příjmení
+Placeholder 2: Pracovní e-mail
+Placeholder 3: Firma
+Tlačítko (Načítání): Odesílám...
+Tlačítko (Standardní): Zobrazit analýzu
+
+=== STRÁNKA VÝSLEDKŮ (UI) ===
+Štítek profilu: Váš diagnostický profil
+Štítek bodů: Body / 32
+Nadpis Analýza: Analýza stavu
+Nadpis Dopad: Dopad v praxi
+Nadpis Doporučení: Strategické doporučení
+Tlačítko (Načítání PDF): Generuji audit...
+Tlačítko (Stáhnout PDF): Stáhnout kompletní PDF audit
+Tlačítko (Konzultace): Poptat konzultaci výsledků
+Patička: © 2026 Resilium – Profesionální diagnostika stability pod tlakem.
+
+Šablona E-mailu (Předmět): Resilium Audit: Poptávka konzultace ({jméno_zákazníka})
+Šablona E-mailu (Tělo): 
+Dobrý den,
+mám zájem o konzultaci výsledků mého Resilium Auditu.
+
+SOUHRN VÝSLEDKŮ:
+Jméno: {jméno}
+Firma: {firma}
+Dosažené skóre: {body} / 32
+Diagnostický profil: {profil}
+
+Prosím o návrh termínu krátkého hovoru pro probrání dalšího postupu.
+
+=== VÝSLEDKY - KATEGORIE (calculateResults) ===
+Kategorie 1 (Zelená zóna - skóre 27-32):
+- Titulek: Funkční reakce pod tlakem
+- Popis: Vaše odpovědi ukazují dobrou schopnost obnovit jasné uvažování, udržet orientaci a rozhodovat i při zvýšené zátěži.
+- Dopad v praxi: V praxi pravděpodobně dokážete držet směr i ve chvíli, kdy ostatní ztrácejí klid. Rizikem této úrovně bývá falešná jistota: při vyšší intenzitě tlaku, časové tísni nebo odpovědnosti za tým se mohou objevit slabá místa, která běžný provoz neodhalí.
+- Strategické doporučení: Doporučujeme ověřit vaše reakce ve scénářovém tréninku. Cílem není začínat od nuly, ale zpevnit rozhodování, komunikaci a reakce v komplexnějších situacích.
+- Doporučený program: Doporučený program: Resilium Advanced
+
+Kategorie 2 (Žlutá zóna - skóre 19-26):
+- Titulek: Nestabilní výkon v zátěži
+- Popis: Vaše odpovědi ukazují, že v běžných podmínkách pravděpodobně fungujete dobře, ale při vyšším tlaku může docházet ke zúžení pozornosti, zpomalení rozhodování nebo přenosu stresu do komunikace.
+- Dopad v praxi: Toto je nejčastější profil. Člověk ví, co by měl dělat, ale v ostré chvíli se kvalita reakce mění. Výkon začne kolísat: někdy rozhodnete dobře, jindy přepnete do improvizace, zkratky nebo snahy vše vyřešit silou vůle.
+- Strategické doporučení: Doporučujeme základní trénink stabilizace, orientace a rozhodování pod tlakem. Cílem je vytvořit jednoduchý použitelný protokol, který se dá spustit i ve chvíli, kdy roste stres.
+- Doporučený program: Doporučený program: Resilium Start
+
+Kategorie 3 (Červená zóna - skóre 0-18):
+- Titulek: Riziko ztráty rozhodovací kapacity pod tlakem
+- Popis: Vaše odpovědi ukazují zvýšené riziko zahlcení, impulzivní reakce nebo rozhodovacího zablokování ve chvíli, kdy situace vyžaduje klidný a funkční postup.
+- Dopad v praxi: V praxi to může znamenat, že pod tlakem ztrácíte přístup ke svým běžným schopnostem. Nejde nutně o nedostatek znalostí. Problém je v tom, že ve chvíli vysoké zátěže se tělo, pozornost a rozhodování mohou rozjet různými směry.
+- Strategické doporučení: Doporučujeme cílenou konzultaci a návrh tréninku zaměřeného na první reakci, stabilitu, rozhodování a komunikaci v zátěži. V této úrovni nestačí další informace. Je potřeba praktický nácvik reakce.
+- Doporučený program: Doporučený program: Resilium Pro
+
+=== PDF REPORT ===
+Nadpis: Audit připravenosti jednat pod tlakem
+Štítky: Klient | Organizace
+Zástupce prázdné firmy: Individuální audit
+Sekce 1: 1. Diagnostický profil:
+Sekce 2: 2. Dopad v praxi
+Text pod dopadem: Výsledek ukazuje, jak pravděpodobně reagujete ve chvíli, kdy se zvyšuje tlak, přibývá podnětů a rozhodování musí proběhnout bez ideálních podmínek. Readiness Index není lékařské ani psychologické vyšetření. Slouží jako praktický orientační nástroj pro práci s reakcí, komunikací a rozhodováním v zátěži.
+Sekce 3: 3. Strategické doporučení
+Důvěrnost: Důvěrné - Určeno pouze pro vnitřní potřebu klienta.
+Nadpis Metodika: Metodický rámec Resilium Readiness
+Metodika Téma 1: Tlak mění kvalitu reakce
+Metodika Text 1: Resilium vychází z jednoduchého principu: v zátěži nestačí vědět, co by měl člověk udělat. Rozhodující je, zda si k této schopnosti dokáže udržet přístup i ve chvíli, kdy se mění dech, napětí v těle, pozornost, emoce a vnímání rizika.
+Metodika Téma 2: První reakce rozhoduje o dalším vývoji
+Metodika Text 2: Audit sleduje zejména schopnost zastavit první impuls, obnovit orientaci a přejít k použitelnému postupu. Krátká prodleva mezi podnětem a reakcí není pasivita. Je to prostor, ve kterém vzniká kvalitnější rozhodnutí.
+Metodika Téma 3: Protokol místo improvizace
+Metodika Text 3: Bez trénovaného postupu člověk často spoléhá na návyk, temperament nebo momentální energii. To může stačit v běžném provozu, ale v zátěži se výkon stává nestabilním. Cílem Resilia je vytvořit jednoduché a opakovatelné reakční protokoly použitelné v reálných situacích.
+Nadpis Domény: Domény auditu
+Úvod Domén: Váš Readiness Index skóre {score}/32 odráží odpovědi v několika klíčových oblastech:
+- První reakce: Jak rychle se vracíte k jasnému uvažování po náhlém narušení.
+- Orientace: Jak dobře udržujete přehled, když roste tlak a přibývá podnětů.
+- Priority: Jak určujete pořadí kroků, když vše vypadá naléhavě.
+- Kontrola impulsu: Jak zvládáte provokaci, zpochybnění nebo emoční tlak.
+- Komunikace: Jak váš tón, tempo a způsob vedení ovlivňuje ostatní pod tlakem.
+- Adaptace: Jak rychle obnovíte rozhodování, když původní plán přestane fungovat.
+- Ego a zpětná vazba: Jak dobře oddělujete osobní pozici od funkčního řešení.
+- Rozhodování: Jak jednáte ve chvíli, kdy informace nejsou úplné a čekání zvyšuje riziko.
+Upozornění Nadpis: Závěrečné upozornění:
+Upozornění Text: Výsledky tohoto auditu vycházejí ze sebehodnotícího schématu. Nejde o klinickou diagnostiku, psychologické vyšetření ani garantovanou predikci chování v krizové situaci. Výstup slouží jako praktický podklad pro rozhodnutí, zda má smysl navázat cíleným tréninkem reakce, komunikace a rozhodování pod tlakem.
+Patička: Resilium - Profesionální trénink stability a rozhodování pod tlakem. Více na www.resilium.cz

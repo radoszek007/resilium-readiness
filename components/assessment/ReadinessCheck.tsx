@@ -21,20 +21,20 @@ export default function ReadinessCheck() {
   const t = {
     cs: {
       introTitle: "Připraveni na diagnostiku?",
-      introDesc: "Zjistěte, jak reagujete pod vysokým operačním tlakem.",
-      introBtn: "ZAČÍT TEST",
+        introDesc: "Ověřte si úroveň své stability v zátěžových situacích.",
+        introBtn: "SPUSTIT DIAGNOSTIKU",
       auditPoint: "Auditní bod",
     },
     pl: {
       introTitle: "Gotowi na diagnozę?",
-      introDesc: "Dowiedz się, jak reagujesz pod dużą presją operacyjną.",
-      introBtn: "ROZPOCZNIJ TEST",
+        introDesc: "Sprawdź poziom swojej stabilności pod obciążeniem.",
+        introBtn: "ROZPOCZNIJ DIAGNOSTYKĘ",
       auditPoint: "Punkt audytu",
     },
     en: {
       introTitle: "Ready for the diagnosis?",
-      introDesc: "Find out how you react under high operational pressure.",
-      introBtn: "START TEST",
+        introDesc: "Verify your stability level under pressure.",
+        introBtn: "START DIAGNOSTICS",
       auditPoint: "Audit point",
     }
   }[language];

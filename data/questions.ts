@@ -15,82 +15,82 @@ export const questions: Record<Language, Question[]> = {
   cs: [
     {
       id: 1,
-      text: "Když se situace náhle změní a všichni čekají na vaši reakci, jak rychle se vracíte k jasnému uvažování?",
+      text: "Představte si, že se situace v průběhu práce náhle změní a okolí čeká na váš další krok. Co se ve vás děje v prvních sekundách?",
       options: [
-        { text: "Několik desítek vteřin jednám spíš automaticky, než se znovu srovnám.", score: 2 },
-        { text: "V řádu několika vteřin. Zastavím první impuls, zorientuji se a jednám.", score: 4 },
-        { text: "Situace mě na chvíli vyhodí z provozu. Reaguji pozdě, zkratkovitě nebo chaoticky.", score: 1 },
-        { text: "Chvíli cítím tlak, ale obvykle se rychle vrátím k věcnému postupu.", score: 3 }
+        { text: "Cítím tělesné napětí. Potřebuji krátkou pauzu, abych si znovu srovnal/a fakta.", score: 2 },
+        { text: "Ihned se soustředím na nová data. Překvapení v tu chvíli vědomě neregistruji.", score: 4 },
+        { text: "Cítím nejistotu a zmatek. Moje reakce bývá příliš rychlá, nebo naopak pasivní.", score: 1 },
+        { text: "Vnímám tlak situace, ale dokážu se rychle vrátit k věcnému postupu.", score: 3 }
       ]
     },
     {
       id: 2,
-      text: "Co se stane s vaším vnímáním, když se tlak zvedne a přibývá podnětů?",
+      text: "Jak se mění vaše vnímání okolí, když se zvýší počet požadavků a zkrátí termíny?",
       options: [
-        { text: "Držím hlavní problém, ale musím si vědomě hlídat okolnosti.", score: 3 },
-        { text: "Vidím jen největší problém před sebou. Kontext, lidé a alternativy mizí.", score: 1 },
-        { text: "Udržím hlavní cíl, lidi, prostor i rizika v jednom obrazu.", score: 4 },
-        { text: "Zúžím pozornost na jednu věc a ostatní mi začíná unikat.", score: 2 }
+        { text: "Soustředím se výhradně na jeden problém. Ostatní souvislosti a lidé mi unikají.", score: 2 },
+        { text: "Udržím si přehled o celku. Sleduji priority, lidi v týmu i možná rizika.", score: 4 },
+        { text: "Začínám být zahlcen/a. Přeskakuji mezi úkoly a těžko udržím pozornost u jedné věci.", score: 1 },
+        { text: "Snažím se držet směr, ale vyžaduje to ode mě velkou dávku vědomé kontroly.", score: 3 }
       ]
     },
     {
       id: 3,
-      text: "Když se na vás sesype více požadavků najednou, máte jasný způsob, jak určit pořadí reakcí?",
+      text: "Když se na vás sejde více naléhavých požadavků najednou, podle čeho volíte pořadí reakcí?",
       options: [
-        { text: "Spíš hasím to, co je nejhlasitější nebo nejviditelnější.", score: 2 },
-        { text: "Nemám jasný postup. Situace mě zahltí a ztrácím pořadí kroků.", score: 1 },
-        { text: "Ano. Řídím se prioritou dopadu, rizika a času.", score: 4 },
-        { text: "Většinou ano, ale někdy přepínám podle toho, co nejvíc tlačí.", score: 3 }
+        { text: "Reaguji na to, co je v danou chvíli nejvíce vidět nebo kdo nejvíce naléhá.", score: 2 },
+        { text: "Řídím se pevným schématem: vyhodnotím dopad, riziko a časovou dotaci.", score: 4 },
+        { text: "Nemám jasný postup. Pocit zahlcení mi znemožňuje logicky seřadit kroky.", score: 1 },
+        { text: "Většinou pořadí určím správně, ale pod tlakem někdy sklouznu k řešení drobností.", score: 3 }
       ]
     },
     {
       id: 4,
-      text: "Když vás někdo vyprovokuje nebo zpochybní před ostatními, co rozhoduje o vaší odpovědi?",
+      text: "Kolega nebo klient veřejně zpochybní váš postup. Co je hlavním motorem vaší okamžité odpovědi?",
       options: [
-        { text: "Snažím se zůstat věcný, i když se mě to vnitřně dotkne.", score: 3 },
-        { text: "Emoce převezme řízení a dopad řeším až později.", score: 1 },
-        { text: "Cíl situace. Nejprve si hlídám výsledek, potom emoci.", score: 4 },
-        { text: "Reaguji rychleji, ostřeji nebo osobněji, než je užitečné.", score: 2 }
+        { text: "Snaha okamžitě vysvětlit svůj postoj, protože se mě to osobně dotklo.", score: 2 },
+        { text: "Cíl dané situace. Oddělím kritiku od své osoby a řeším pouze věcný výsledek.", score: 4 },
+        { text: "Vnitřní neklid, který mi brání v pohotové a věcné argumentaci.", score: 1 },
+        { text: "Snaha udržet profesionální tón, i když vnitřně cítím silné podráždění.", score: 3 }
       ]
     },
     {
       id: 5,
-      text: "Jak se mění vaše komunikace, když tým, klient nebo kolega začne ztrácet klid?",
+      text: "Jak se mění váš způsob mluvy, když tým nebo okolí začne pod vlivem stresu ztrácet klid?",
       options: [
-        { text: "Můj tlak se přenáší na ostatní. Tón, tempo nebo podráždění situaci zhoršují.", score: 1 },
-        { text: "Zpřesním sdělení, zpomalím tempo a držím věcný rámec.", score: 4 },
-        { text: "Začnu komunikaci zkracovat, přeskakovat nebo přebírat věci na sebe.", score: 2 },
-        { text: "Mluvím důrazněji, ale stále se snažím udržet směr.", score: 3 }
+        { text: "Začnu mluvit důrazněji a rychleji. Moje podráždění situaci spíše zhoršuje.", score: 1 },
+        { text: "Zpomalím tempo řeči a zpřesním informace. Snažím se komunikaci zklidnit.", score: 4 },
+        { text: "Začnu sdělení zkracovat nebo přebírám úkoly na sebe, abych se vyhnul/a diskuzi.", score: 2 },
+        { text: "Mluvím důrazně, ale snažím se stále držet věcnou rovinu a směr.", score: 3 }
       ]
     },
     {
       id: 6,
-      text: "Připravený plán selže. Jak rychle obnovíte schopnost rozhodovat podle nové reality?",
+      text: "Připravený postup selže a vy musíte okamžitě reagovat na novou realitu. Jak vypadá vaše adaptace?",
       options: [
-        { text: "Potřebuji krátké ověření, co přesně selhalo, pak měním postup.", score: 3 },
-        { text: "Zaseknu se v chybě, vysvětlování nebo hledání viníka.", score: 1 },
-        { text: "Držím původní plán déle, než je praktické.", score: 2 },
-        { text: "Rychle přepnu z obhajoby plánu na hledání další použitelné varianty.", score: 4 }
+        { text: "Mám tendenci analyzovat, proč to selhalo, místo abych hledal/a nové řešení.", score: 2 },
+        { text: "Okamžitě opouštím nefunkční plán a hledám další použitelnou variantu.", score: 4 },
+        { text: "Snažím se původní plán ještě chvíli opravovat, i když už není efektivní.", score: 1 },
+        { text: "Potřebuji krátké ověření faktů, co přesně nevyšlo, a pak měním postup.", score: 3 }
       ]
     },
     {
       id: 7,
-      text: "Když se v napjaté situaci ukáže, že někdo jiný má lepší návrh než vy, co uděláte?",
+      text: "Uprostřed řešení krize přijde někdo jiný s lepším návrhem, než je váš. Jak reagujete?",
       options: [
-        { text: "Mám tendenci svůj postup bránit, i když už ztrácí účinnost.", score: 2 },
-        { text: "Přijmu funkční řešení bez ohledu na to, od koho přišlo.", score: 4 },
-        { text: "Beru to osobně a konflikt o pozici začne převažovat nad řešením.", score: 1 },
-        { text: "Vnitřně mě to zasáhne, ale dokážu se vrátit k cíli.", score: 3 }
+        { text: "Mám tendenci svůj postup bránit, protože jsem do něj už investoval/a energii.", score: 2 },
+        { text: "Pokud je návrh funkční, okamžitě ho přijmu. Moje ego v tu chvíli není prioritou.", score: 4 },
+        { text: "Souhlasím, ale vnitřně mě to rozhodí a ztratím na chvíli jistotu v rozhodování.", score: 1 },
+        { text: "Návrh přijmu, ale vnitřně mě mrzí, že jsem na něj nepřišel/přišla sám/sama.", score: 3 }
       ]
     },
     {
       id: 8,
-      text: "Když nemáte dost informací, ale čekání zvyšuje riziko, jak reagujete?",
+      text: "Musíte udělat zásadní krok, ale nemáte kompletní informace. Čekání však zvyšuje riziko. Jak postupujete?",
       options: [
-        { text: "Odkládám rozhodnutí, protože chci ještě jistotu.", score: 2 },
-        { text: "Rozhodnu podle priorit, dostupných dat a přijmu odpovědnost za další krok.", score: 4 },
-        { text: "Nejistota mě blokuje a rozhodnutí přesouvám, oddaluji nebo nechávám na jiných.", score: 1 },
-        { text: "Volím bezpečnější variantu, která omezuje největší škodu.", score: 3 }
+        { text: "Rozhodnutí odkládám. Riziko chyby z nedostatku dat je pro mě nepřijatelné.", score: 2 },
+        { text: "Vyhodnotím dostupná fakta, určím priority a rozhodnu. Přijímám odpovědnost.", score: 4 },
+        { text: "Pod tlakem nejistoty se rozhoduji impulzivně, jen abych tu fázi ukončil/a.", score: 1 },
+        { text: "Volím nejméně rizikovou variantu, která situaci zakonzervuje.", score: 3 }
       ]
     }
   ],

@@ -20,27 +20,27 @@ export default function Home() {
 
   const t = {
     cs: {
-      tag: "PSYCHOFYZICKÉ TRÉNOVÁNÍ REAKCÍ",
-      title1: "Dělejte správná",
-      titleHighlight: "rozhodnutí",
-      title2: "i pod tlakem",
-      desc: "Zjistěte svou úroveň psychofyzické odolnosti v kritických situacích. Tam, kde ostatní chybují, vy zachováte klid.",
+      tag: "RESILIUM DIAGNOSTIKA",
+      title1: "Ověřte si své reakce",
+      titleHighlight: "v zátěžových",
+      title2: "situacích",
+      desc: "Zjistěte, jakým způsobem se mění vaše reakce, když přibývá podnětů, chybí čas nebo se mění zadání. Ověřte si úroveň své stability v zátěžových situacích.",
       footer: "© 2026 RESILIUM. Všechna práva vyhrazena.",
     },
     pl: {
-      tag: "PSYCHOFIZYCZNY TRENING REAKCJI",
-      title1: "Podejmuj właściwe",
-      titleHighlight: "decyzje",
-      title2: "nawet pod presją",
-      desc: "Sprawdź swój poziom odporności psychofizycznej w sytuacjach krytycznych. Tam, gdzie inni popełniają błędy, Ty zachowasz spokój.",
+      tag: "DIAGNOSTYKA RESILIUM",
+      title1: "Sprawdź swoje reakcje",
+      titleHighlight: "w sytuacjach",
+      title2: "stresowych",
+      desc: "Dowiedz się, jak zmieniają się Twoje reakcje, gdy przybywa bodźców, brakuje czasu lub zmieniają się zadania. Sprawdź poziom swojej stabilności pod obciążeniem.",
       footer: "© 2026 RESILIUM. Wszelkie prawa zastrzeżone.",
     },
     en: {
-      tag: "PSYCHOPHYSICAL REACTION TRAINING",
-      title1: "Make the right",
-      titleHighlight: "decisions",
-      title2: "even under pressure",
-      desc: "Discover your psychophysical resilience level in critical situations. Where others fail, you stay calm.",
+      tag: "RESILIUM DIAGNOSTICS",
+      title1: "Verify your reactions",
+      titleHighlight: "in stressful",
+      title2: "situations",
+      desc: "Find out how your reactions change when stimuli increase, time is short, or tasks change. Verify your stability level under pressure.",
       footer: "© 2026 RESILIUM. All rights reserved.",
     }
   }[language];
